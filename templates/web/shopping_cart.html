@@ -53,35 +53,35 @@
             <table class="table table-bordered">
               <thead>
                 <tr>
-                  <th scope="col"><span>PRODUCT NAME</span></th>
-                  <th scope="col"><span>UNIT PRICE </span> <span class="d-none">ALL DETAILS</span></th>
-                  <th scope="col"><span>QUANTITY</span></th>
-                  <th scope="col"><span>TOTAL</span></th>
+                  <th scope="col"><span>Product name</span></th>
+                  <th scope="col"><span>Category</th>
+                  <th scope="col"><span>Color</span></th>
+                  <th scope="col"><span>price</span></th>
                   
                 </tr>
               </thead>
               <tbody>
+                {% for p in products %}
                 <tr>
                   <td>
                     <div class="d-flex">
                       <div class="cart-img">
-                        <img src="{% static 'web/img/products/31.png" alt="product">
+                        <img src="{{p.photo.url}}" alt="product">
                       </div>
                       <div class="product-name mt-auto mb-auto ml-30">
-                        <h6><a href="{% url 'web:shopdetalis' %}">Leather shoes for men</a></h6>
-
+                        <h6><a href="{% url 'web:shopdetalis' %}">{{p.name}}</a></h6>
                       </div>
                     </div>
                   </td>
                   <td >
                     <div class="product-price ">
-                      <span>$42.00</span>
+                      <span>{{p.price}}</span>
                       <div class="shopping-cart-mobile-content d-none mt-10">
                         <div class="quty">
                           <input class="qty" type="number" value="1">
                         </div>
                         <div class="cart-button mt-20">
-                          <span>$42.00</span>
+                          <span>{{p.cost}}</span>
                           <button class="float-right ">X</button>
                         </div>
                       </div>
@@ -94,57 +94,13 @@
                   </td>
                   <td>
                     <div class="cart-button ">
-                      <span>$42.00</span>
+                      <span>{{p.cost}}</span>
                       <button class="float-right">X</button>
                     </div>
                   </td>
                 </tr>
-                <tr>
-                  <td>
-                    <div class="d-flex">
-                      <div class="cart-img">
-                        <img src="{% static 'web/img/products/28.png" alt="product">
-                      </div>
-                      <div class="product-name mt-auto mb-auto ml-30">
-                        <h6><a href="{% url 'web:shopdetalis' %}">Leather shoes</a></h6>
-                      </div>
-                    </div>
-                  </td>
-                  <td >
-                    <div class="product-price ">
-                      <span>$29.00</span>
-                      <div class="shopping-cart-mobile-content d-none mt-10">
-                        <div class="quty">
-                          <input class="qty" type="number" value="1">
-                        </div>
-                        <div class="cart-button mt-20">
-                          <span>$42.00</span>
-                          <button class="float-right ">X</button>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="quty">
-                      <input class="qty" type="number" value="1">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="cart-button ">
-                      <span>$42.00</span>
-                      <button class="float-right">X</button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="4">
-                    <div class="table-button">
-                      <button>CLEAR SHOPPING CART</button>
-                      <button class="ml-25">UPDATE SHOPPING CART</button>
-                      <button class="float-right">CONTINUE SHOPPING</button>
-                    </div>
-                  </td>
-                </tr>
+                {% endfor %}
+                
               </tbody>
             </table>
           </div>

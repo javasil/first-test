@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from web.models import Product
 
 
 def index(request):
@@ -158,8 +159,10 @@ def shoplistleft(request):
    
 
 def shoppingcart(request):
+    products = Product.objects.all()
     context = {
-        "is_shoppingcart" : True
+        "is_shoppingcart" : True,
+        "products":products
     }
     return render(request, 'web/shopping_cart.html',context)    
    

@@ -1,5 +1,7 @@
 from django.shortcuts import render
+
 from django.http import HttpResponse
+
 
 from web.models import Product
 
@@ -75,8 +77,10 @@ def news(request):
 
 
 def shopleft(request):
+    products = Product.objects.all()
     context = {
-        "is_shopleft" : True
+        "is_shopleft" : True,
+        "products" : Product
     }
     return render(request, 'web/shop_detalis_left_sidebar.html',context)
 
@@ -162,7 +166,7 @@ def shoppingcart(request):
     products = Product.objects.all()
     context = {
         "is_shoppingcart" : True,
-        "products":products
+        "products":Product
     }
     return render(request, 'web/shopping_cart.html',context)    
    

@@ -45,6 +45,8 @@
   <!-- Page Title area Ends -->
 
   <!-- new arrival area starts -->
+
+  
   <div class="shop-details-ls shop-grid-s pt-120">
     <div class="container">
       <div class="row">
@@ -146,7 +148,7 @@
                 </div>
                 <div class="product-wrapper mt-25 d-flex">
                   <div class="product-img position-relative">
-                    <img src="{% static 'web/img/products/23.png' %}" alt="product">
+                    <img src="{{p.photo.url}}" alt="product">
                     <div class="cart-icon">
                       <a href="{% url 'web:shoppingcart' %}"><i class="las la-cart-plus"></i></a>
                     </div>
@@ -195,14 +197,17 @@
                   </div>
                 </div>
               </div>
+             
+
               <div class="single-product">
                 <div class="product-wrapper d-flex">
                   <div class="product-img position-relative ">
-                    <img src="{% static 'web/img/products/22.png' %}" alt="product">
+                    <img src="{{p.photo.url}}" alt="product">
                     <div class="cart-icon">
                       <a href="{% url 'web:shoppingcart' %}"><i class="las la-cart-plus"></i></a>
                     </div>
                   </div>
+                  
                   <div class="product-details mt-10">
                     <span>Shoes</span>
                     <h6><a href="{% url 'web:shopdetalis' %}">Leather Menz Shoes</a></h6>
@@ -223,7 +228,7 @@
                     <span>Shoes</span>
                     <h6><a href="{% url 'web:shopdetalis' %}">Leather Menz Shoes</a></h6>
                     <div class="price d-flex">
-                      <span>$999</span>
+                      <span>{{p.cost}}</span>
                       <del>$899</del>
                     </div>
                   </div>
@@ -232,6 +237,7 @@
             </div>
           </div>
         </div>
+        
         <div class="col-xl-9 col-lg-8 col-md-12 ">
           <div class="shop-details pt-80 pt-lg-0">
             <div class="container pl-0 pr-0">
@@ -404,6 +410,7 @@
       </div>
     </div>
   </div>
+  
 
   
 

@@ -61,7 +61,7 @@
                 </tr>
               </thead>
               <tbody>
-                {% for p in products %}
+                {% for p in Product %}
                 <tr>
                   <td>
                     <div class="d-flex">
@@ -69,7 +69,7 @@
                         <img src="{{p.photo.url}}" alt="product">
                       </div>
                       <div class="product-name mt-auto mb-auto ml-30">
-                        <h6><a href="{% url 'web:shopdetalis' %}">{{p.name}}</a></h6>
+                        <h6><a href="{% url 'web:shopdetalis' %}">{{p.title}}</a></h6>
                       </div>
                     </div>
                   </td>
